@@ -14,7 +14,7 @@ public class RigidBody : MonoBehaviour
     public bool CanJump;
     public Collision Contacto;
     public int puntos;
-    public TMPro.TextMeshPro TextoPuntos;
+    public TMPro.TextMeshProUGUI TextoPuntos;
     // Start is called before the first frame update
     void Start()
     {
