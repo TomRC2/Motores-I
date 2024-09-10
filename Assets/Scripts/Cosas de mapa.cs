@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RigidBody : MonoBehaviour
+public class CosasDeMapa : MonoBehaviour
 {
    
     public Vector2 inputVector;
     public Rigidbody Rigidbody;
     public Collision Contacto;
     public int puntos;
-<<<<<<<< HEAD:Assets/Scripts/Cosas de mapa.cs
-    public TMPro.TextMeshPro TextoPuntos;
-   
-========
-    public TMPro.TextMeshProUGUI TextoPuntos;
-    // Start is called before the first frame update
->>>>>>>> 14fc5a9aadbb89064e5f74af177a7f4efbb2d380:Assets/Scripts/CharacterMovement.cs
+    public TextMeshPro TextoPuntos;
+
+    public CosasDeMapa(TextMeshPro textoPuntos)
+    {
+        TextoPuntos = textoPuntos;
+    }
+
     void Start()
     {
         Rigidbody = GetComponent<Rigidbody>();
@@ -46,6 +47,21 @@ public class RigidBody : MonoBehaviour
             puntos++;
             TextoPuntos.text = puntos.ToString();
         }
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override bool Equals(object other)
+    {
+        return base.Equals(other);
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
     }
 }
 
