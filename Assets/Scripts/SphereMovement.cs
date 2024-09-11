@@ -6,6 +6,7 @@ public class SphereMovement : MonoBehaviour
 {
     public float moveSpeed;
     public float groundDrag;
+    public float fallMultiplier = 2.5f;
     public Transform orientation;
 
     public float jumpForce;
@@ -49,6 +50,10 @@ public class SphereMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
     }
 
     private void MyInput()
